@@ -10,6 +10,7 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { HyssComponent } from './components/hyss/hyss.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,25 @@ import { BannerComponent } from './components/banner/banner.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgCircleProgressModule.forRoot({
+      "radius": 60,
+      "space": -10,
+      "outerStrokeGradient": true,
+      "outerStrokeWidth": 10,
+      "outerStrokeColor": "#4882c2",
+      "outerStrokeGradientStopColor": "#53a9ff",
+      "innerStrokeColor": "#e7e8ea",
+      "innerStrokeWidth": 10,
+      "title": "UI",
+      "animateTitle": false,
+      "animationDuration": 1000,
+      "showUnits": false,
+      "showBackground": false,
+      "clockwise": false,
+      "startFromZero": false,
+      "lazy": true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
