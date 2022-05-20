@@ -1,0 +1,28 @@
+div {
+    background-color: var(--colordefondo);
+    
+}
+
+
+/*Estilo de la foto de perfil*/
+
+@media (min-width: 576px){
+    #fotodeperfil{
+        position: absolute;
+        width: 15%;
+        border-radius: 100%;
+        box-shadow: 0.3em 0.3em 0.3em grey;
+        /*top: 100px;*/
+        left: 40px;
+    }
+}
+
+@media (max-width: 575px){
+    #fotodeperfil{
+        position: absolute;
+        width: 30%;
+        border-radius: 100%;
+        box-shadow: 0.3em 0.3em 0.3em grey;
+        /*top: 100px;*/
+    }
+}

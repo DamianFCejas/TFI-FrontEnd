@@ -1,0 +1,7 @@
+div {
+    background-color: var(--colordefondo);
+}
+
+h3, h4 {
+    display: inline;
+}
