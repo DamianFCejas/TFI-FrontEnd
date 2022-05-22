@@ -5,10 +5,14 @@ div {
 
 img {
     width: 40px;
-    
+    margin: 0.2em;
 }
 
 #APLogo {
     width: 8em;
     
+}
+
+.container {
+    display: contents;
 }
