@@ -5,7 +5,8 @@
             <img class="rounded float-start" src="../../../assets/APLogoo.png" id="APLogo">
         </div>
         <div class="col">
-            <button type="button" class="float-end btn btn-outline-light">INGRESO</button>
+            <button type="submit" routerLink="/login" *ngIf="logueado==''" class="float-end btn btn-outline-light">INGRESO</button>
+            <button type="submit" *ngIf="logueado!=''" class="float-end btn btn-outline-light">SALIR</button>
 
             <a href=""><img class="float-end" src="../../../assets/Mail.png" id="mail"></a>
             <a href=""><img class="float-end" src="../../../assets/GitHub.png" id="github"></a>

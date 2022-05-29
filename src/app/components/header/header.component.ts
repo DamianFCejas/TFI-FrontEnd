@@ -1,3 +1,4 @@
+import { LoginService } from './../../service/login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  logueado:string ="";
+
+  constructor(public LoginService: LoginService) { }
 
   ngOnInit(): void {
+    this.logueado = this.LoginService.getUserLogged();
   }
 
 }

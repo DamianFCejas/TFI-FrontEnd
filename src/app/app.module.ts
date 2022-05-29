@@ -11,7 +11,12 @@ import { HyssComponent } from './components/hyss/hyss.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { HttpClientModule } from '@angular/common/http';  
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { PortfolioComponent } from './portfolio/portfolio/portfolio.component';  
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -22,13 +27,15 @@ import { HttpClientModule } from '@angular/common/http';
     EducacionComponent,
     HyssComponent,
     ProyectosComponent,
-    BannerComponent
+    BannerComponent,
+    LoginComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({
-      "radius": 60,
+      "radius": 40,
       "space": -10,
       "outerStrokeGradient": true,
       "outerStrokeWidth": 10,
@@ -45,9 +52,11 @@ import { HttpClientModule } from '@angular/common/http';
       "startFromZero": false,
       "lazy": true
     }),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
