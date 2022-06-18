@@ -9,13 +9,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   //username: string = "";
   //password: string = "";
   
   form: FormGroup;
   loginerror: Boolean = false;
-
 
   constructor(
     private router:Router, 
@@ -37,7 +35,7 @@ export class LoginComponent implements OnInit {
     
     //console.log(this.form.value);
 
-    (this.LoginService.login(this.form.value)).subscribe(
+    (this.LoginService.loginn(this.form.value)).subscribe(
       (response: Boolean) => {
         if (response)
         this.router.navigate(['/portfolio']);

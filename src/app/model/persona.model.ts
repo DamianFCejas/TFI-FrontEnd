@@ -1,4 +1,4 @@
-export class persona {
+export class Persona {
     idpersona?: number;
     nombre: String;
     apellido: String;
@@ -9,6 +9,7 @@ export class persona {
     sobreMi: String;
     urlFoto: String;
 
+    
     constructor (nombre: String, apellido: String, domicilio: String, telefono: String, correo: String, fechaNac: String, sobreMi: String, urlFoto: String) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -19,4 +20,5 @@ export class persona {
         this.sobreMi = sobreMi;
         this.urlFoto = urlFoto;
     }
+    
 }

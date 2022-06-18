@@ -1,4 +1,5 @@
-import { persona } from './../../model/persona.model';
+import { LoginService } from './../../service/login.service';
+import { Persona } from './../../model/persona.model';
 import { Component, OnInit } from '@angular/core';
 import { PersonaService } from 'src/app/service/persona.service';
 
@@ -9,13 +10,25 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class AcercaDeComponent implements OnInit {
 
-  persona: persona = new persona("","","","","","","","");
+  persona: Persona = new Persona ("","","","","","","","");
+  isUserLogged: Boolean = false;
 
-  constructor(public personaService: PersonaService) { }
+  constructor(
+    private personaService: PersonaService,
+    private loginService: LoginService,
+    ) { }
 
   ngOnInit(): void {
+    this.isUserLogged = this.loginService.isUserLogged();
+    
+    this.reloadData();
+  }
 
-    this.personaService.getPersona().subscribe(data => {this.persona = data})
+  private reloadData() {
+    this.personaService.getPersona().subscribe(
+      data => {
+        this.persona = data;
+      });
 
   }
 

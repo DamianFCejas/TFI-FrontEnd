@@ -8,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  logueado:string ="";
+  //logueado:string ="";
+  isUserLogged: boolean = false;
 
-  constructor(public LoginService: LoginService) { }
+  constructor(
+    private LoginService: LoginService) { }
 
   ngOnInit(): void {
-    this.logueado = this.LoginService.getUserLogged();
+    this.isUserLogged = this.LoginService.isUserLogged();
+  }
+
+  logout(): void {
+    this.LoginService.logout();
+    this.isUserLogged = false;
+    window.location.reload();
   }
 
 }

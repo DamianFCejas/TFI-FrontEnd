@@ -15,11 +15,11 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.logueado = this.LoginService.getUserLogged();
+    //this.logueado = this.LoginService.getUserLogged();
   }
 
   salir():void {
-    this.LoginService.deleteToken();
+    //this.LoginService.deleteToken();
     this.logueado="";
   }
 

@@ -1,5 +1,6 @@
 import { LoginnDto } from './../data/LoginnDto';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from "ngx-cookie-service";
@@ -15,8 +16,8 @@ export class LoginService {
   constructor(private http: HttpClient, private cookies: CookieService) { }
 
   public loginn(credentials: LoginnDto): Observable<Boolean> {
-    return this.http.post<Boolean>(config.baseUrl + "login", credentials).pipe(
-      tap((response: Boolean) =>{
+    return this.http.post<Boolean>(config.baseUrl + "api/user/login", credentials).pipe(
+      tap ((response: Boolean) =>{
         if (response)
         sessionStorage.setItem("username", "usuario2");
       })
@@ -31,10 +32,12 @@ export class LoginService {
   public isUserLogged():boolean {
     return sessionStorage.getItem("username") !== null;
   }
-
+  
+  /*
   login(user: any): Observable<any>{
     return this.http.post(this.url+"login", user);
   }
+  
 
   
   setToken(token: string) {
@@ -53,7 +56,7 @@ export class LoginService {
     const token = this.getToken();
     return token;
   }
-  
+  */
 
 
 }
