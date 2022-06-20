@@ -25,11 +25,11 @@ export class EducacionComponent implements OnInit {
       this.educationForm = this.formBuilder.group({
         ideducacion: [''],
         titulo: ['', [Validators.required, Validators.minLength(6)]],
-        estudioFinalizado: ['', [Validators.required]],
+        estudioFinalizado: [''],
         fechaInicio: ['', [Validators.required, Validators.minLength(4)]],
-        fechaFin: ['', [Validators.required, Validators.minLength(4)]],
+        fechaFin: [''],
         descripcion: [''],
-        img: ['', [Validators.required]],
+        img: ['', [Validators.required, Validators.minLength(5)]],
         institucion: ['', [Validators.required, Validators.minLength(3)]],
         
       });
@@ -114,6 +114,19 @@ export class EducacionComponent implements OnInit {
         }
       )
     }
+  }
+
+  get Titulo() {
+    return this.educationForm.get('titulo');
+  }
+  get FechaInicio() {
+    return this.educationForm.get('fechaInicio');
+  }
+  get Img() {
+    return this.educationForm.get('img');
+  }
+  get Institucion() {
+    return this.educationForm.get('institucion');
   }
 
   

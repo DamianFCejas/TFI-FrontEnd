@@ -1,23 +1,163 @@
 <div class="row">
+    <!-- Modal -->
+    <div class="modal fade" id="experienciaForm" tabindex="-1" aria-labelledby="experienciaFormLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="experienciaFormLabel">Experiencia Laboral</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="experForm" (ngSubmit)="onSubmit()">
+                        <input type="hidden" name="idexperiencia" formControlName="idexperiencia">
 
-    <h2>Experiencia Laboral</h2>
+                        <div class="row mb-3">
+                            <label for="tipoEmpleo" class="col-sm-3 col-form-label">Puesto</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="tipoEmpleo" formControlName="tipoEmpleo" class="form-control"
+                                    [ngClass]="{'is-invalid': TipoEmpleo?.errors && TipoEmpleo?.touched, 'is-valid': !TipoEmpleo?.errors && TipoEmpleo?.touched }"
+                                    required>
+                                <div *ngIf="TipoEmpleo?.errors && TipoEmpleo?.touched">
+                                    <span *ngIf="TipoEmpleo?.hasError('required')" class="text-danger">El puesto es
+                                        requerido</span>
+                                    <span *ngIf="TipoEmpleo?.hasError('minlength')" class="text-danger">El nombre es muy
+                                        corto</span>
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="col-lg-11">
-        <ul>
-            <li>
-                <h3>Trabajo 1</h3> - <h4>(años)</h4>
+                        <div class="row mb-3">
+                            <label for="fechaInicio" class="col-sm-3 col-form-label">Fecha de Inicio</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="fechaInicio" formControlName="fechaInicio" class="form-control"
+                                    [ngClass]="{'is-invalid': FechaInicio?.errors && FechaInicio?.touched, 'is-valid': !FechaInicio?.errors && FechaInicio?.touched }"
+                                    required>
+                                <div *ngIf="FechaInicio?.errors && FechaInicio?.touched">
+                                    <span *ngIf="FechaInicio?.hasError('required')" class="text-danger">La fecha de
+                                        inicio es
+                                        requerida</span>
+                                    <span *ngIf="FechaInicio?.hasError('minlength')" class="text-danger">La fecha es muy
+                                        corta</span>
+                                </div>
+                            </div>
+                        </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas necessitatibus ea cupiditate modi molestias non velit suscipit quis quibusdam veritatis eligendi voluptate reiciendis magni esse, a maxime sint sit aspernatur?</p>
-            </li>
-           
-            <li>
-                <h3>Trabajo 2</h3> - <h4>(años)</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas necessitatibus ea cupiditate modi molestias non velit suscipit quis quibusdam veritatis eligendi voluptate reiciendis magni esse, a maxime sint sit aspernatur?</p>
-            </li>
-      
-            <li>
-                <h3>Trabajo 3</h3> - <h4>(años)</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas necessitatibus ea cupiditate modi molestias non velit suscipit quis quibusdam veritatis eligendi voluptate reiciendis magni esse, a maxime sint sit aspernatur?</p>
+                        <div class="row mb-3">
+                            <label for="fechaFin" class="col-sm-3 col-form-label">Fecha de Finalizacion</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="fechaFin" formControlName="fechaFin" class="form-control"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="esTrabajoActual" class="col-sm-3 col-form-label">¿Es un trabajo actual?</label>
+                            <div class="col-sm-9">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="esTrabajoActual"
+                                        formControlName="esTrabajoActual" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="empresa" class="col-sm-2 col-form-label">Empresa</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="empresa" formControlName="empresa" class="form-control"
+                                    [ngClass]="{'is-invalid': Empresa?.errors && Empresa?.touched, 'is-valid': !Empresa?.errors && Empresa?.touched }"
+                                    required>
+                                <div *ngIf="Empresa?.errors && Empresa?.touched">
+                                    <span *ngIf="Empresa?.hasError('required')" class="text-danger">El nombre de la
+                                        empresa es requerida</span>
+                                    <span *ngIf="Empresa?.hasError('minlength')" class="text-danger">El nombre es muy
+                                        corto</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <label for="descripcion" class="col-sm-3 col-form-label">Descripción</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="descripcion" formControlName="descripcion" class="form-control"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-titles">
+        <h2>Experiencia Laboral</h2>
+        <div *ngIf="isUserLogged" class="btn-edit">
+            <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#experienciaForm"
+                (click)="onNewExperiencia()"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+    <div class="col-lg-10">
+        <ul class="items-list" id="experienciaList">
+            <li *ngFor="let experiencia of experienciaList; let i = index">
+
+                <div class="data-container">
+                    <div class="row gx-2">
+
+                        <div class="list-info col-md-9">
+                            <div>
+                                <h3>{{ experiencia.tipoEmpleo }} </h3>
+                                <h4>( <time>{{ experiencia.fechaInicio }}</time>
+                                    <time>
+                                        <span>
+                                            <div
+                                                *ngIf="experiencia.fechaFin; then hayFinalizacion else nohayFinalizacion">
+                                            </div>
+                                            <ng-template #hayFinalizacion>
+                                                - {{ experiencia.fechaFin }}
+                                            </ng-template>
+                                            <ng-template #nohayFinalizacion>
+    
+                                            </ng-template>
+                                        </span>
+                                    </time> )</h4>
+                                <p><span>
+                                        <h4>{{ experiencia.empresa }}</h4>
+                                    </span>
+                                    <span>
+                                        <div
+                                            *ngIf="experiencia.esTrabajoActual === true; then finalizado else noFinalizado">
+                                        </div>
+                                        <ng-template #finalizado>
+                                            - Es trabajo actual
+                                        </ng-template>
+                                        <ng-template #noFinalizado>
+
+                                        </ng-template>
+                                    </span><br>
+                                    <span>{{ experiencia.descripcion }}</span>
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
+                            <div class="btn-edit">
+                                <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#experienciaForm"
+                                    (click)="onEditExperiencia(i)"><i class="fa fa-pen"></i></button>
+                            </div>
+                            <div class="btn-edit">
+                                <button class="btn btn-right" (click)="onDeleteExperiencia(i)"><i
+                                        class="fa fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </li>
         </ul>
 
