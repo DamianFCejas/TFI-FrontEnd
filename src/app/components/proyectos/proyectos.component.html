@@ -1,13 +1,113 @@
 <div class="row">
-    <h2>Proyectos Realizados</h2>
-    <div class="contenedor">
-        <div class="col-sm-12 col-md-7 col-lg-7 parte1">
-            <h3>Portfolio</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus cum ut velit mollitia accusamus ipsum neque illum commodi dignissimos earum, voluptatibus temporibus porro voluptate sit ea dicta enim eligendi labore!</p>
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
-            <img src="../../../assets/Portfolio.png" class="img-fluid img-proyecto">
+    <!-- Modal -->
+    <div class="modal fade" id="proyectoForm" tabindex="-1" aria-labelledby="proyectoFormLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="proyectoFormLabel">Proyectos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="proyectoForm" (ngSubmit)="onSubmit()">
+                        <input type="hidden" name="idproyecto" formControlName="idproyecto">
 
+                        <div class="row mb-3">
+                            <label for="nombre" class="col-sm-3 col-form-label">Nombre</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="nombre" formControlName="nombre" class="form-control"
+                                    [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.touched, 'is-valid': !Nombre?.errors && Nombre?.touched }"
+                                    required>
+                                <div *ngIf="Nombre?.errors && Nombre?.touched">
+                                    <span *ngIf="Nombre?.hasError('required')" class="text-danger">El nombre es
+                                        requerido</span>
+                                    <span *ngIf="Nombre?.hasError('minlength')" class="text-danger">El nombre es muy
+                                        corto</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="descripcion" class="col-sm-3 col-form-label">Descripción</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="descripcion" formControlName="descripcion" class="form-control"
+                                    [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched, 'is-valid': !Descripcion?.errors && Descripcion?.touched }"
+                                    required>
+                                <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                                    <span *ngIf="Descripcion?.hasError('required')" class="text-danger">La descripción
+                                        es requerida</span>
+                                    <span *ngIf="Descripcion?.hasError('minlength')" class="text-danger">La descripción
+                                        es muy
+                                        corta</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="urlFoto" class="col-sm-3 col-form-label">Link de la imagen</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="urlFoto" formControlName="urlFoto" class="form-control"
+                                    [ngClass]="{'is-invalid': UrlFoto?.errors && UrlFoto?.touched, 'is-valid': !UrlFoto?.errors && UrlFoto?.touched }"
+                                    required>
+                                <div *ngIf="UrlFoto?.errors && UrlFoto?.touched">
+                                    <span *ngIf="UrlFoto?.hasError('required')" class="text-danger">El link de la imagen
+                                        es requerido</span>
+                                    <span *ngIf="UrlFoto?.hasError('minlength')" class="text-danger">El link de la
+                                        imagen es muy
+                                        corto</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="card-titles">
+        <h2>Proyectos</h2>
+        <div *ngIf="isUserLogged" class="btn-edit">
+            <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#proyectoForm"
+                (click)="onNewProyecto()"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+    <div class="col-lg-10">
+        <ul class="items-list" id="proyectoList">
+            <li *ngFor="let proyecto of proyectoList; let i = index">
+
+                <div class="data-container">
+                    <div class="row gx-2">
+
+                        <div class="logo-image-container col-md-2"><img class="logo-image w-75"
+                                [src]="proyecto.urlFoto">
+                        </div>
+                        <div class="list-info col-md-9">
+                            <div>
+                                <h3>{{ proyecto.nombre }} </h3>
+                                <p>
+                                    <span>{{ proyecto.descripcion }}</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
+                            <div class="btn-edit">
+                                <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#proyectoForm"
+                                    (click)="onEditProyecto(i)"><i class="fa fa-pen"></i></button>
+                            </div>
+                            <div class="btn-edit">
+                                <button class="btn btn-right" (click)="onDeleteProyecto(i)"><i
+                                        class="fa fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
     </div>
 </div>

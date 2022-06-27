@@ -1,93 +1,136 @@
 <div class="row">
+
+    <!-- Modal -->
+    <div class="modal fade" id="hyssForm" tabindex="-1" aria-labelledby="hyssFormLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="hyssFormLabel">Hard & Soft Skills</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="hyssForm" (ngSubmit)="onSubmit()">
+                        <input type="hidden" name="idhyss" formControlName="idhyss">
+
+                        <div class="row mb-3">
+                            <label for="nombre" class="col-sm-3 col-form-label">Nombre</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="nombre" formControlName="nombre" class="form-control"
+                                    [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.touched, 'is-valid': !Nombre?.errors && Nombre?.touched }"
+                                    required>
+                                <div *ngIf="Nombre?.errors && Nombre?.touched">
+                                    <span *ngIf="Nombre?.hasError('required')" class="text-danger">El nombre de la habilidad es
+                                        requerido</span>
+                                    <span *ngIf="Nombre?.hasError('minlength')" class="text-danger">El nombre es muy
+                                        corto</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="porcentaje" class="col-sm-3 col-form-label">Porcentaje</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="porcentaje" formControlName="porcentaje" class="form-control"
+                                    [ngClass]="{'is-invalid': Porcentaje?.errors && Porcentaje?.touched, 'is-valid': !Porcentaje?.errors && Porcentaje?.touched }"
+                                    required>
+                                <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
+                                    <span *ngIf="Porcentaje?.hasError('required')" class="text-danger">El valor
+                                        es requerido</span>
+                                    <span *ngIf="Porcentaje?.hasError('minlength')" class="text-danger">El valor
+                                        es muy
+                                        corto</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <h2>Hard & Soft Skills</h2>
+
+    <div *ngIf="isUserLogged" class="btn-edit">
+        <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#hyssForm"
+            (click)="onNewHyss()"><i class="fa fa-plus"></i></button>
+    </div>
+
+
+    <ul class="items-list" id="hyssList">
+        <li *ngFor="let hyss of hyssList; let i = index">
+
+            <div class="text-center col-sm-4 col-mg-4 col-lg-4">
+                <circle-progress [percent]="hyss.porcentaje" [radius]="100" [title]="hyss.nombre" [titleFontSize]="'2em'" [showSubtitle]="false"
+                    [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
+                    [animation]="true" [animationDuration]="300"></circle-progress>
+            </div>
+            <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
+                <div class="btn-edit">
+                    <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#hyssForm"
+                        (click)="onEditHyss(i)"><i class="fa fa-pen"></i></button>
+                </div>
+                <div class="btn-edit">
+                    <button class="btn btn-right" (click)="onDeleteHyss(i)"><i
+                            class="fa fa-trash"></i></button>
+                </div>
+            </div>
+            <!-- 
+
+            <div class="data-container">
+                <div class="row gx-2">
+                    
+                    <div class="list-info col-md-9">
+                        <div>
+                            <h3>{{ proyecto.nombre }} </h3>
+                            <p>
+                                <span>{{ proyecto.descripcion }}</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            -->
+        </li>
+    </ul>
+
+
     <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-        <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [title]="'HTML'"
-        [titleFontSize]="'2em'"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
+        <circle-progress [percent]="85" [radius]="100" [title]="'HTML'" [titleFontSize]="'2em'" [showSubtitle]="false"
+            [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
+            [animation]="true" [animationDuration]="300"></circle-progress>
     </div>
     <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-        <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [title]="'CSS'"
-        [titleFontSize]="'2em'"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
+        <circle-progress [percent]="85" [radius]="100" [title]="'CSS'" [titleFontSize]="'2em'" [showSubtitle]="false"
+            [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
+            [animation]="true" [animationDuration]="300"></circle-progress>
     </div>
     <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-        <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [title]="'JS'"
-        [titleFontSize]="'2em'"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
+        <circle-progress [percent]="85" [radius]="100" [title]="'JS'" [titleFontSize]="'2em'" [showSubtitle]="false"
+            [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
+            [animation]="true" [animationDuration]="300"></circle-progress>
     </div>
     <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-        <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [title]="'Inglés'"
-        [titleFontSize]="'2em'"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
+        <circle-progress [percent]="85" [radius]="100" [title]="'Inglés'" [titleFontSize]="'2em'" [showSubtitle]="false"
+            [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
+            [animation]="true" [animationDuration]="300"></circle-progress>
     </div>
     <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-        <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [title]="'Trabajo en Equipo'"
-        [titleFontSize]="'1em'"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
+        <circle-progress [percent]="85" [radius]="100" [title]="'Trabajo en Equipo'" [titleFontSize]="'1em'"
+            [showSubtitle]="false" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'"
+            [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300"></circle-progress>
     </div>
     <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-        <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [title]="'Comunicación'"
-        [titleFontSize]="'1em'"
-        [showSubtitle]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="300"
-    ></circle-progress>
+        <circle-progress [percent]="85" [radius]="100" [title]="'Comunicación'" [titleFontSize]="'1em'"
+            [showSubtitle]="false" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'"
+            [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300"></circle-progress>
     </div>
 </div>

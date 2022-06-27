@@ -1,17 +1,170 @@
-
 <div class="container">
     <div class="row">
+        <!-- Modal -->
+        <div class="modal fade" id="personaForm" tabindex="-1" aria-labelledby="personaFormLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="personaFormLabel">Datos Personales</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="personaForm" (ngSubmit)="onSubmit()">
+                            <input type="hidden" name="idpersona" formControlName="idpersona">
+
+                            <div class="row mb-3">
+                                <label for="nombre" class="col-sm-3 col-form-label">Nombre</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="nombre" formControlName="nombre" class="form-control"
+                                        [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.touched, 'is-valid': !Nombre?.errors && Nombre?.touched }"
+                                        required>
+                                    <div *ngIf="Nombre?.errors && Nombre?.touched">
+                                        <span *ngIf="Nombre?.hasError('required')" class="text-danger">El nombre es
+                                            requerido</span>
+                                        <span *ngIf="Nombre?.hasError('minlength')" class="text-danger">El nombre es muy
+                                            corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="apellido" class="col-sm-3 col-form-label">Apellido</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="apellido" formControlName="apellido" class="form-control"
+                                        [ngClass]="{'is-invalid': Apellido?.errors && Apellido?.touched, 'is-valid': !Apellido?.errors && Apellido?.touched }"
+                                        required>
+                                    <div *ngIf="Apellido?.errors && Apellido?.touched">
+                                        <span *ngIf="Apellido?.hasError('required')" class="text-danger">El apellido
+                                            es requerido</span>
+                                        <span *ngIf="Apellido?.hasError('minlength')" class="text-danger">El apellido
+                                            es muy corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="domicilio" class="col-sm-3 col-form-label">Lugar de residencia</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="domicilio" formControlName="domicilio" class="form-control"
+                                        [ngClass]="{'is-invalid': Domicilio?.errors && Domicilio?.touched, 'is-valid': !Domicilio?.errors && Domicilio?.touched }"
+                                        required>
+                                    <div *ngIf="Domicilio?.errors && Domicilio?.touched">
+                                        <span *ngIf="Domicilio?.hasError('required')" class="text-danger">La información
+                                            es requerida</span>
+                                        <span *ngIf="Domicilio?.hasError('minlength')" class="text-danger">El lugar de
+                                            residencia
+                                            es muy corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="telefono" class="col-sm-3 col-form-label">Teléfono</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="telefono" formControlName="telefono" class="form-control"
+                                        [ngClass]="{'is-invalid': Telefono?.errors && Telefono?.touched, 'is-valid': !Telefono?.errors && Telefono?.touched }"
+                                        required>
+                                    <div *ngIf="Telefono?.errors && Telefono?.touched">
+                                        <span *ngIf="Telefono?.hasError('required')" class="text-danger">El telefono
+                                            es requerido</span>
+                                        <span *ngIf="Apellido?.hasError('minlength')" class="text-danger">El telefono
+                                            es muy corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="correo" class="col-sm-3 col-form-label">Mail</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="correo" formControlName="correo" class="form-control"
+                                        [ngClass]="{'is-invalid': Correo?.errors && Correo?.touched, 'is-valid': !Correo?.errors && Correo?.touched }"
+                                        required>
+                                    <div *ngIf="Correo?.errors && Correo?.touched">
+                                        <span *ngIf="Correo?.hasError('required')" class="text-danger">El mail
+                                            es requerido</span>
+                                        <span *ngIf="Correo?.hasError('minlength')" class="text-danger">El mail
+                                            es muy corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="fechaNac" class="col-sm-3 col-form-label">Edad</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="fechaNac" formControlName="fechaNac" class="form-control"
+                                        [ngClass]="{'is-invalid': FechaNac?.errors && FechaNac?.touched, 'is-valid': !FechaNac?.errors && FechaNac?.touched }"
+                                        required>
+                                    <div *ngIf="FechaNac?.errors && FechaNac?.touched">
+                                        <span *ngIf="FechaNac?.hasError('required')" class="text-danger">La edad
+                                            es requerida</span>
+                                        <span *ngIf="FechaNac?.hasError('minlength')" class="text-danger">La edad
+                                            es muy corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="sobreMi" class="col-sm-3 col-form-label">Sobre Mi</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="sobreMi" formControlName="sobreMi" class="form-control"
+                                        [ngClass]="{'is-invalid': SobreMi?.errors && SobreMi?.touched, 'is-valid': !SobreMi?.errors && SobreMi?.touched }"
+                                        required>
+                                    <div *ngIf="SobreMi?.errors && SobreMi?.touched">
+                                        <span *ngIf="SobreMi?.hasError('required')" class="text-danger">La información
+                                            es requerida</span>
+                                        <span *ngIf="SobreMi?.hasError('minlength')" class="text-danger">La información
+                                            es muy corta</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="urlFoto" class="col-sm-3 col-form-label">Link de la imagen</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="urlFoto" formControlName="urlFoto" class="form-control"
+                                        [ngClass]="{'is-invalid': UrlFoto?.errors && UrlFoto?.touched, 'is-valid': !UrlFoto?.errors && UrlFoto?.touched }"
+                                        required>
+                                    <div *ngIf="UrlFoto?.errors && UrlFoto?.touched">
+                                        <span *ngIf="UrlFoto?.hasError('required')" class="text-danger">El link de la
+                                            imagen
+                                            es requerido</span>
+                                        <span *ngIf="UrlFoto?.hasError('minlength')" class="text-danger">El link de la
+                                            imagen es muy
+                                            corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="button" class="btn btn-secondary me-4"
+                                    data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <img class="img-fluid" src="../../../assets/FotoPerfil.jpg" id="fotodeperfil">
+            <img class="img-fluid" [src]="persona.urlFoto" id="fotodeperfil">
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nomtit">
             <p>{{persona.nombre}} {{persona.apellido}}</p>
-            <p>Desarrollador Full Stack Jr.</p>
+            <p>{{ persona.puesto }}</p>
         </div>
         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
             <h2>Acerca de mi</h2>
             <p>{{persona.sobreMi}}</p>
         </div>
+
+        <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
+            <div class="btn-edit">
+                <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#personaForm"
+                    (click)="onEditPersona(1)"><i class="fa fa-pen"></i></button>
+            </div>
+        </div>
+
     </div>
 
 </div>
