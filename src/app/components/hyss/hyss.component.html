@@ -1,7 +1,7 @@
 <div class="row">
 
     <!-- Modal -->
-    <div class="modal fade" id="hyssForm" tabindex="-1" aria-labelledby="hyssFormLabel" aria-hidden="true">
+    <div class="modal fade" id="hyssForm" tabindex="-1" aria-labelledby="hyssFormLabel" aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -19,7 +19,8 @@
                                     [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.touched, 'is-valid': !Nombre?.errors && Nombre?.touched }"
                                     required>
                                 <div *ngIf="Nombre?.errors && Nombre?.touched">
-                                    <span *ngIf="Nombre?.hasError('required')" class="text-danger">El nombre de la habilidad es
+                                    <span *ngIf="Nombre?.hasError('required')" class="text-danger">El nombre de la
+                                        habilidad es
                                         requerido</span>
                                     <span *ngIf="Nombre?.hasError('minlength')" class="text-danger">El nombre es muy
                                         corto</span>
@@ -42,10 +43,10 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="text-center">
                             <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
                         </div>
                     </form>
                 </div>
@@ -58,49 +59,34 @@
     <h2>Hard & Soft Skills</h2>
 
     <div *ngIf="isUserLogged" class="btn-edit">
-        <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#hyssForm"
-            (click)="onNewHyss()"><i class="fa fa-plus"></i></button>
+        <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#hyssForm" (click)="onNewHyss()"><i
+                class="fa fa-plus"></i></button>
     </div>
 
-
     <ul class="items-list" id="hyssList">
-        <li *ngFor="let hyss of hyssList; let i = index">
+            <li *ngFor="let hyss of hyssList; let i = index">
 
-            <div class="text-center col-sm-4 col-mg-4 col-lg-4">
-                <circle-progress [percent]="hyss.porcentaje" [radius]="100" [title]="hyss.nombre" [titleFontSize]="'2em'" [showSubtitle]="false"
-                    [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
-                    [animation]="true" [animationDuration]="300"></circle-progress>
-            </div>
-            <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
-                <div class="btn-edit">
-                    <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#hyssForm"
-                        (click)="onEditHyss(i)"><i class="fa fa-pen"></i></button>
-                </div>
-                <div class="btn-edit">
-                    <button class="btn btn-right" (click)="onDeleteHyss(i)"><i
-                            class="fa fa-trash"></i></button>
-                </div>
-            </div>
-            <!-- 
 
-            <div class="data-container">
-                <div class="row gx-2">
-                    
-                    <div class="list-info col-md-9">
-                        <div>
-                            <h3>{{ proyecto.nombre }} </h3>
-                            <p>
-                                <span>{{ proyecto.descripcion }}</span>
-                            </p>
-                        </div>
+                <div class="text-center col-sm-4 col-mg-4 col-lg-4">
+                    <circle-progress [percent]="hyss.porcentaje" [radius]="100" [title]="hyss.nombre"
+                        [titleFontSize]="'2em'" [showSubtitle]="false" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+                        [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true"
+                        [animationDuration]="300"></circle-progress>
+                </div>
+                <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
+                    <div class="btn-edit">
+                        <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#hyssForm"
+                            (click)="onEditHyss(i)"><i class="fa fa-pen"></i></button>
                     </div>
-
-                    
+                    <div class="btn-edit">
+                        <button class="btn btn-right" (click)="onDeleteHyss(i)"><i class="fa fa-trash"></i></button>
+                    </div>
                 </div>
-            </div>
-            -->
-        </li>
+            </li>
+       
+
     </ul>
+
 
 
     <div class="text-center col-sm-4 col-mg-4 col-lg-4">

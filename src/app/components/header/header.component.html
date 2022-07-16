@@ -1,19 +1,74 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <img class="rounded float-start" src="https://acortar.link/SXMCMM" id="APLogo">
+<div class="container-fluid">
+    <div class="d-flex align-items-center">
+        <div class="me-sm-auto flex-shrink-1">
+            <img class="rounded img-fluid m-1"
+                src="https://i0.wp.com/diario-nco.com/wp-content/uploads/2021/09/Argentina-Programa-FUENTE-www.argentina.gob_.png?fit=1030%2C220&ssl=1"
+                id="APLogo">
         </div>
-        <div class="col">
+        <div class="m-1">
+            <a href="https://www.linkedin.com/in/damian-f-cejas" target="_blank"><img src="../../../assets/LinkedIn.png" id="linkedin"></a>
+        </div>
+        <div class="m-1">
+            <a href="https://github.com/DamianFCejas" target="_blank"><img src="../../../assets/GitHub.png"
+                    id="github"></a>
+        </div>
+        <div class="m-1">
+            <a href="" data-bs-toggle="modal" data-bs-target="#modalMail"><img src="../../../assets/Mail.png"
+                    id="mail"></a>
+        </div>
+
+        <!-- Modal -->
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </symbol>
+        </svg>
+
+
+        <div class="modal fade" id="modalMail" tabindex="-1" aria-labelledby="modalMailLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalMailLabel">Contacto por mail</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-inline-flex">
+
+                        
+                            <div class="m-1">damianfcejas@hotmail.com</div>
+                            <label class="m-1">
+                                <i class="fa fa-clone" aria-hidden="true" (click)="copiarMail()"></i>
+                            </label>
+                        
+                        
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between">
+                        <div class="">
+                            <div *ngIf="copiado">
+                                <div class="alert alert-success" id="mensaje">
+                                    <svg class="me-2" width="24" height="24" role="img"
+                                        aria-label="Success:">
+                                        <use xlink:href="#check-circle-fill" />
+                                    </svg>
+                                    <span class="">¡Copiado al portapapeles!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="m-1 ps-4">
             <button type="submit" *ngIf="!isUserLogged" routerLink="/login"
                 class="float-end btn btn-outline-light">INGRESO</button>
             <button type="submit" *ngIf="isUserLogged" routerLink="/logout" class="float-end btn btn-outline-light"
                 (click)="logout()">SALIR</button>
 
-            <a href=""><img class="float-end" src="../../../assets/Mail.png" id="mail"></a>
-            <a href=""><img class="float-end" src="../../../assets/GitHub.png" id="github"></a>
-            <a href=""><img class="float-end" src="https://i.pinimg.com/736x/dd/2c/80/dd2c809c09ed7a8d45507de3d291209f.jpg" id="linkedin"></a>
-
         </div>
     </div>
-
 </div>

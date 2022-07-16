@@ -1,18 +1,23 @@
-div {
-    background-color: var(--colorheader);
-    
-}
 
 img {
     width: 40px;
-    margin: 0.2em;
+    /* margin: 0.2em; */
 }
 
 #APLogo {
-    width: 8em;
+    width: 25em;
     
 }
 
-.container {
-    display: contents;
+.container-fluid {
+    /* display: contents; */
+    background-color: var(--colorheader);
+}
+
+#github {
+    width: 3.7em;
+}
+
+#linkedin {
+    width: 2.8em;
 }

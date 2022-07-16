@@ -22,7 +22,7 @@ div {
         width: 15%;
         border-radius: 50%;
         box-shadow: 0.3em 0.3em 0.3em grey;
-        /*top: 100px;*/
+        
         left: 3px;
         margin-top: -5%;
     }
@@ -34,9 +34,9 @@ div {
         width: 30%;
         border-radius: 100%;
         box-shadow: 0.3em 0.3em 0.3em grey;
-        /*top: 100px;*/;
+        
         left: 2%;
         margin-top: -10%;
 
     }
-}
+}   
