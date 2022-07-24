@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div class="row ps-4">
         <!-- Modal -->
         <div class="modal fade" id="personaForm" tabindex="-1" aria-labelledby="personaFormLabel" aria-hidden="true"
             data-bs-backdrop="static">
@@ -147,19 +147,19 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <img class="img-fluid" [src]="persona.urlFoto" id="fotodeperfil">
+        <div class="col-12 col-sm-6 col-md-2">
+            <img class="img-fluid ms-2" [src]="persona.urlFoto" id="fotodeperfil">
         </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nomtit">
-            <p>{{persona.nombre}} {{persona.apellido}}</p>
-            <p>{{ persona.puesto }}</p>
+        <div class="col-12 col-sm-6 col-md-2 nomtit mt-4">
+            <p class="blockquote">{{persona.nombre}} {{persona.apellido}}</p>
+            <p class="lead">{{ persona.puesto }}</p>
         </div>
-        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div class="col-12 col-sm-11 col-md-7 mt-3">
             <h2>Acerca de mi</h2>
             <p>{{persona.sobreMi}}</p>
         </div>
 
-        <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
+        <div *ngIf="isUserLogged" class="data-control col-sm-1 col-md-1 text-end">
             <div class="btn-edit">
                 <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#personaForm"
                     (click)="onEditPersona(1)"><i class="fa fa-pen"></i></button>

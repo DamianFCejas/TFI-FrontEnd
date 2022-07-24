@@ -7,36 +7,29 @@ div {
     
 }
 
-/*
-.nomtit {
-    margin-top: 3%;
-    margin-left: 2%;
-}
-*/
-
 /*Estilo de la foto de perfil*/
 
-@media (min-width: 576px){
+@media (min-width: 646px){
     #fotodeperfil{
-        position: absolute;
-        width: 15%;
+        position: relative;
+        width: 100%;
         border-radius: 50%;
         box-shadow: 0.3em 0.3em 0.3em grey;
         
-        left: 3px;
+        
         margin-top: -5%;
+        justify-content: center;
     }
 }
 
-@media (max-width: 575px){
+@media (max-width: 645px){
     #fotodeperfil{
-        position: relative;
-        width: 30%;
+        /* position: relative; */
+        width: 60%;
         border-radius: 100%;
         box-shadow: 0.3em 0.3em 0.3em grey;
-        
-        left: 2%;
         margin-top: -10%;
+        
 
     }
 }   

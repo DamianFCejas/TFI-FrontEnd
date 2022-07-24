@@ -1,0 +1,130 @@
+
+app-banner {
+    margin-bottom: -183px;
+}
+
+#item-acerca {
+    padding-top: 183px;
+    margin-bottom: -130px;
+}
+
+#item-experiencia {
+    padding-top: 130px;
+    margin-bottom: -130px;
+
+}
+
+#item-educacion {
+    padding-top: 130px;
+    margin-bottom: -130px;
+}
+
+#item-hyss {
+    padding-top: 130px;
+    margin-bottom: -130px;
+}
+
+#item-proyectos {
+    padding-top: 130px;
+    margin-bottom: -130px;
+}
+
+/* Para dispositivos 856px */
+@media screen and (max-width: 856px){
+    app-banner {
+        padding-top: 135px;
+        margin-bottom: -260px;
+    }
+    
+    #item-acerca {
+        padding-top: 260px;
+        margin-bottom: -210px;
+    }
+
+    #item-experiencia {
+        padding-top: 210px;
+        margin-bottom: -210px;
+    
+    }
+
+    #item-educacion {
+        padding-top: 210px;
+        margin-bottom: -210px;
+    }
+    
+    #item-hyss {
+        padding-top: 210px;
+        margin-bottom: -210px;
+    }
+    
+    #item-proyectos {
+        padding-top: 210px;
+        margin-bottom: -210px;
+    }
+}
+
+@media screen and (max-width: 753px){
+    app-banner {
+        padding-top: 185px;
+        margin-bottom: -275px;
+    }
+    
+    #item-acerca {
+        padding-top: 275px;
+        margin-bottom: -240px;
+    }
+
+    #item-experiencia {
+        padding-top: 240px;
+        margin-bottom: -240px;
+    
+    }
+
+    #item-educacion {
+        padding-top: 240px;
+        margin-bottom: -240px;
+    }
+    
+    #item-hyss {
+        padding-top: 240px;
+        margin-bottom: -240px;
+    }
+    
+    #item-proyectos {
+        padding-top: 240px;
+        margin-bottom: -240px;
+    }
+}
+
+@media screen and (max-width: 645px){
+    app-banner {
+        padding-top: 250px;
+        margin-bottom: -355px;
+    }
+    
+    #item-acerca {
+        padding-top: 355px;
+        margin-bottom: -325px;
+    }
+
+    #item-experiencia {
+        padding-top: 325px;
+        margin-bottom: -325px;
+    
+    }
+
+    #item-educacion {
+        padding-top: 325px;
+        margin-bottom: -325px;
+    }
+    
+    #item-hyss {
+        padding-top: 325px;
+        margin-bottom: -325px;
+    }
+    
+    #item-proyectos {
+        padding-top: 325px;
+        margin-bottom: -325px;
+    }
+}
