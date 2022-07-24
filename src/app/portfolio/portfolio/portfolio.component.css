@@ -29,6 +29,11 @@ app-banner {
     margin-bottom: -130px;
 }
 
+#item-contacto {
+    padding-top: 130px;
+    margin-bottom: -130px;
+}
+
 /* Para dispositivos 856px */
 @media screen and (max-width: 856px){
     app-banner {

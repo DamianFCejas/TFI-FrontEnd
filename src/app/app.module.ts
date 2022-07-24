@@ -17,6 +17,7 @@ import { PortfolioComponent } from './portfolio/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CookieService } from 'ngx-cookie-service';
     ProyectosComponent,
     BannerComponent,
     LoginComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

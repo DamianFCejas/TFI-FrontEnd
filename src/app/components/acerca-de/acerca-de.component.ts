@@ -29,7 +29,7 @@ export class AcercaDeComponent implements OnInit {
         fechaNac: ['', [Validators.required, Validators.minLength(2)]],
         sobreMi: ['', [Validators.required, Validators.minLength(5)]],
         urlFoto: ['', [Validators.required, Validators.minLength(5)]],
-        puesto: ['', [Validators.required, Validators.minLength(5)]],
+        puesto: ['', [Validators.required, Validators.minLength(3)]],
         
       });
      }
