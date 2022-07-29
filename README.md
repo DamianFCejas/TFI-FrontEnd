@@ -1,4 +1,9 @@
-# TFIFrontEnd
+# Trabajo Final Integrador de YoProgramo de Argentina Programa (FrontEnd)
+
+##Descripcion
+
+Éste trabajo es el proyecto final de la segunda parte del programa [Argentina Programa](https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa) llamada YoProgramo. El objetivo de éste trabajo es demostrar los conocimientos adquiridos durante el curso y realizar al mismo tiempo un portfolio de presentación para utilizar en búsquedas laborales.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
