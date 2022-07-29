@@ -3,7 +3,7 @@
         <!-- Modal -->
         <div class="modal fade" id="personaForm" tabindex="-1" aria-labelledby="personaFormLabel" aria-hidden="true"
             data-bs-backdrop="static">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-fullscreen-md-down">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="personaFormLabel">Datos Personales</h5>
@@ -90,21 +90,6 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="fechaNac" class="col-sm-3 col-form-label">Edad</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="fechaNac" formControlName="fechaNac" class="form-control"
-                                        [ngClass]="{'is-invalid': FechaNac?.errors && FechaNac?.touched, 'is-valid': !FechaNac?.errors && FechaNac?.touched }"
-                                        required>
-                                    <div *ngIf="FechaNac?.errors && FechaNac?.touched">
-                                        <span *ngIf="FechaNac?.hasError('required')" class="text-danger">La edad
-                                            es requerida</span>
-                                        <span *ngIf="FechaNac?.hasError('minlength')" class="text-danger">La edad
-                                            es muy corto</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
                                 <label for="sobreMi" class="col-sm-3 col-form-label">Sobre Mi</label>
                                 <div class="col-sm-9">
                                     <input type="text" name="sobreMi" formControlName="sobreMi" class="form-control"
@@ -120,7 +105,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="urlFoto" class="col-sm-3 col-form-label">Link de la imagen</label>
+                                <label for="urlFoto" class="col-sm-3 col-form-label">Link de la imagen de Perfil</label>
                                 <div class="col-sm-9">
                                     <input type="text" name="urlFoto" formControlName="urlFoto" class="form-control"
                                         [ngClass]="{'is-invalid': UrlFoto?.errors && UrlFoto?.touched, 'is-valid': !UrlFoto?.errors && UrlFoto?.touched }"
@@ -143,8 +128,157 @@
                                         [ngClass]="{'is-invalid': Puesto?.errors && Puesto?.touched, 'is-valid': !Puesto?.errors && Puesto?.touched }"
                                         required>
                                     <div *ngIf="Puesto?.errors && Puesto?.touched">
-                                        <span *ngIf="Puesto?.hasError('required')" class="text-danger">El puesto es requerido</span>
-                                        <span *ngIf="Puesto?.hasError('minlength')" class="text-danger">El puesto es muy corto</span>
+                                        <span *ngIf="Puesto?.hasError('required')" class="text-danger">El puesto es
+                                            requerido</span>
+                                        <span *ngIf="Puesto?.hasError('minlength')" class="text-danger">El puesto es muy
+                                            corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+                            <div class="row mb-3">
+                                <label for="urlLogoPortfolio" class="col-sm-3 col-form-label">Link del logo del
+                                    Portfolio</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="urlLogoPortfolio" formControlName="urlLogoPortfolio"
+                                        class="form-control"
+                                        [ngClass]="{'is-invalid': UrlLogoPortfolio?.errors, 'is-valid': !UrlLogoPortfolio?.errors}">
+                                    <div *ngIf="UrlLogoPortfolio?.errors">
+                                        <span *ngIf="UrlLogoPortfolio?.hasError('minlength')" class="text-danger">El
+                                            link es muy corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="urlAP" class="col-sm-3 col-form-label">Link de Argentina Programa</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="urlAP" formControlName="urlAP" class="form-control"
+                                        [ngClass]="{'is-invalid': UrlAP?.errors, 'is-valid': !UrlAP?.errors}">
+                                    <div *ngIf="UrlAP?.errors">
+                                        <span *ngIf="UrlAP?.hasError('minlength')" class="text-danger">El link es muy
+                                            corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="urlFotoAP" class="col-sm-3 col-form-label">Link de la foto de Argentina
+                                    Programa</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="urlFotoAP" formControlName="urlFotoAP" class="form-control"
+                                        [ngClass]="{'is-invalid': UrlFotoAP?.errors && UrlFotoAP?.touched, 'is-valid': !UrlFotoAP?.errors && UrlFotoAP?.touched }"
+                                        required>
+                                    <div *ngIf="UrlFotoAP?.errors && UrlFotoAP?.touched">
+                                        <span *ngIf="UrlFotoAP?.hasError('required')" class="text-danger">El link es
+                                            requerido</span>
+                                        <span *ngIf="UrlFotoAP?.hasError('minlength')" class="text-danger">El link es
+                                            muy corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="urlLd" class="col-sm-3 col-form-label">Url de Linkedin</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="urlLd" formControlName="urlLd" class="form-control"
+                                        [ngClass]="{'is-invalid': UrlLd?.errors && UrlLd?.touched, 'is-valid': !UrlLd?.errors && UrlLd?.touched }"
+                                        required>
+                                    <div *ngIf="UrlLd?.errors && UrlLd?.touched">
+                                        <span *ngIf="UrlLd?.hasError('required')" class="text-danger">El link es
+                                            requerido</span>
+                                        <span *ngIf="UrlLd?.hasError('minlength')" class="text-danger">El link es muy
+                                            corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="urlQrLd" class="col-sm-3 col-form-label">Link de la imagen del código QR de
+                                    Linkedin</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="urlQrLd" formControlName="urlQrLd" class="form-control"
+                                        [ngClass]="{'is-invalid': UrlQrLd?.errors && UrlQrLd?.touched, 'is-valid': !UrlQrLd?.errors && UrlQrLd?.touched }"
+                                        required>
+                                    <div *ngIf="UrlQrLd?.errors && UrlQrLd?.touched">
+                                        <span *ngIf="UrlQrLd?.hasError('required')" class="text-danger">El link es
+                                            requerido</span>
+                                        <span *ngIf="UrlQrLd?.hasError('minlength')" class="text-danger">El link es muy
+                                            corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="urlGithub" class="col-sm-3 col-form-label">Link de Github</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="urlGithub" formControlName="urlGithub" class="form-control"
+                                        [ngClass]="{'is-invalid': UrlGithub?.errors, 'is-valid': !UrlGithub?.errors }">
+                                    <div *ngIf="UrlGithub?.errors">
+                                        <span *ngIf="UrlGithub?.hasError('minlength')" class="text-danger">El link es
+                                            muy corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row mb-3">
+                                <label for="urlFotoBanner" class="col-sm-3 col-form-label">Link de la imagen del
+                                    banner</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="urlFotoBanner" formControlName="urlFotoBanner"
+                                        class="form-control"
+                                        [ngClass]="{'is-invalid': UrlFotoBanner?.errors && UrlFotoBanner?.touched, 'is-valid': !UrlFotoBanner?.errors && UrlFotoBanner?.touched }"
+                                        required>
+                                    <div *ngIf="UrlFotoBanner?.errors && UrlFotoBanner?.touched">
+                                        <span *ngIf="UrlFotoBanner?.hasError('required')" class="text-danger">El link es
+                                            requerido</span>
+                                        <span *ngIf="UrlFotoBanner?.hasError('minlength')" class="text-danger">El link
+                                            es muy corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row mb-3">
+                                <label for="urlLogin" class="col-sm-3 col-form-label">Link de la foto de login</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="urlLogin" formControlName="urlLogin" class="form-control"
+                                        [ngClass]="{'is-invalid': UrlLogin?.errors && UrlLogin?.touched, 'is-valid': !UrlLogin?.errors && UrlLogin?.touched }"
+                                        required>
+                                    <div *ngIf="UrlLogin?.errors && UrlLogin?.touched">
+                                        <span *ngIf="UrlLogin?.hasError('required')" class="text-danger">El link es
+                                            requerido</span>
+                                        <span *ngIf="UrlLogin?.hasError('minlength')" class="text-danger">El link es muy
+                                            corto</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row mb-3">
+                                <label for="urlFotoContacto" class="col-sm-3 col-form-label">Link de la foto de
+                                    contacto</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="urlFotoContacto" formControlName="urlFotoContacto"
+                                        class="form-control"
+                                        [ngClass]="{'is-invalid': UrlFotoContacto?.errors && UrlFotoContacto?.touched, 'is-valid': !UrlFotoContacto?.errors && UrlFotoContacto?.touched }"
+                                        required>
+                                    <div *ngIf="UrlFotoContacto?.errors && UrlFotoContacto?.touched">
+                                        <span *ngIf="UrlFotoContacto?.hasError('required')" class="text-danger">El link
+                                            es requerido</span>
+                                        <span *ngIf="UrlFotoContacto?.hasError('minlength')" class="text-danger">El link
+                                            es muy corto</span>
                                     </div>
                                 </div>
                             </div>
@@ -160,22 +294,24 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-2">
-            <img class="img-fluid ms-2" [src]="persona.urlFoto" id="fotodeperfil">
-        </div>
-        <div class="col-12 col-sm-6 col-md-2 nomtit mt-4">
-            <p class="blockquote">{{persona.nombre}} {{persona.apellido}}</p>
-            <p class="lead">{{ persona.puesto }}</p>
-        </div>
-        <div class="col-12 col-sm-11 col-md-7 mt-3">
-            <h2>Acerca de mi</h2>
-            <p>{{persona.sobreMi}}</p>
-        </div>
+        <div class="row contenidoAcercaDe">
+            <div class="col-12 col-sm-6 col-md-2">
+                <img class="img-fluid ms-2" [src]="persona.urlFoto" id="fotodeperfil">
+            </div>
+            <div class="col-12 col-sm-6 col-md-2 nomtit mt-4">
+                <p class="blockquote">{{persona.nombre}} {{persona.apellido}}</p>
+                <p class="lead">{{ persona.puesto }} </p>
+            </div>
+            <div class="col-12 col-sm-11 col-md-7 mt-3">
+                <h2>Acerca de mi</h2>
+                <p>{{persona.sobreMi}}</p>
+            </div>
 
-        <div *ngIf="isUserLogged" class="data-control col-sm-1 col-md-1 text-end">
-            <div class="btn-edit">
-                <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#personaForm"
-                    (click)="onEditPersona(1)"><i class="fa fa-pen"></i></button>
+            <div *ngIf="isUserLogged" class="data-control col-12 col-sm-1 col-md-1 text-end p-5">
+                <div class="btn-edit">
+                    <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#personaForm"
+                        (click)="onEditPersona(1)"><i class="fa fa-pen"></i></button>
+                </div>
             </div>
         </div>
 

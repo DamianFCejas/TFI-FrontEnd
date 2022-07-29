@@ -1,3 +1,5 @@
+import { Persona } from './../../model/persona.model';
+import { PersonaService } from './../../service/persona.service';
 import { LoginService } from './../../service/login.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,16 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  persona: Persona = new Persona ("","","","","","","","","","","","","","","","","");
+
   //logueado:string ="";
   isUserLogged: boolean = false;
   copiado: boolean = false;
-
+  
 
   constructor(
-    private LoginService: LoginService) { }
+    private LoginService: LoginService,
+    private personaService: PersonaService) { }
 
   ngOnInit(): void {
     this.isUserLogged = this.LoginService.isUserLogged();
+
+    this.reloadData();
+  }
+
+  private reloadData() {
+    this.personaService.getPersona().subscribe(
+      data => {
+        this.persona = data;
+      });
+
   }
 
   logout(): void {
@@ -29,7 +44,7 @@ export class HeaderComponent implements OnInit {
 
   copiarMail(): void {
         
-    navigator.clipboard.writeText('damianfcejas@hotmail.com');
+    navigator.clipboard.writeText('damianfcejas@hotmail.com'); //Falta ver cómo meter la interpolación acá.. (para el mail)
     this.copiado=!this.copiado;
     
     setTimeout(()=>{

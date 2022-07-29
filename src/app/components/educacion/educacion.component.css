@@ -5,3 +5,11 @@ div {
 h3, h4 {
     display: inline;
 }
+
+.imagenLogo {
+    max-width: 150px;
+}
+
+.contenidoEducacion {
+    z-index: 800;
+}

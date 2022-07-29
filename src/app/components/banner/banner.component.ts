@@ -1,3 +1,5 @@
+import { PersonaService } from 'src/app/service/persona.service';
+import { Persona } from './../../model/persona.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
 
-  constructor() { }
+  persona: Persona = new Persona ("","","","","","","","","","","","","","","","","");  
+
+  constructor(
+    private personaService: PersonaService,
+  ) { }
 
   ngOnInit(): void {
+    this.reloadData();
+  }
+
+  private reloadData() {
+    this.personaService.getPersona().subscribe(
+      data => {
+        this.persona = data;
+      });
+
   }
 
 }

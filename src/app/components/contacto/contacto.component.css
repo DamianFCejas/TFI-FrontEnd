@@ -1,4 +1,30 @@
-div {
-    background-color: var(--colordefondo);
+#fondo {
+    background-color: var(--colorcontacto);
     
 }
+
+/* #fotoContacto {
+    max-height: 280px;
+} */
+
+#fotoMail {
+    max-width: 55px;
+}
+
+#imgGithub {
+    max-width: 200px;
+}
+
+#imgLinkedin {
+    max-width: 300px;
+}
+
+#cardGithub {
+    max-width: 313px;
+}
+
+#cardLinkedin {
+    max-width: 264px;
+
+}
+

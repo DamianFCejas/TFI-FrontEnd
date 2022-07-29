@@ -9,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactoComponent implements OnInit {
 
-  persona: Persona = new Persona ("","","","","","","","","");  
+  persona: Persona = new Persona ("","","","","","","","","","","","","","","","","");  
+   
 
   constructor(
     private personaService: PersonaService,

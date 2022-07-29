@@ -1,7 +1,8 @@
 <div class="row ps-4">
   <!-- Modal -->
-  <div class="modal fade" id="educationForm" tabindex="-1" aria-labelledby="educationFormLabel" aria-hidden="true" data-bs-backdrop="static">
-    <div class="modal-dialog">
+  <div class="modal fade" id="educationForm" tabindex="-1" aria-labelledby="educationFormLabel" aria-hidden="true"
+    data-bs-backdrop="static">
+    <div class="modal-dialog modal-fullscreen-md-down">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="educationFormLabel">Educacion</h5>
@@ -102,69 +103,70 @@
     </div>
   </div>
 
-  <div class="card-titles">
-    <h2>Educación</h2>
-    <div *ngIf="isUserLogged" class="btn-edit">
-      <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#educationForm" (click)="onNewEducation()"><i
-          class="fa fa-plus"></i></button>
+  <div class="row contenidoEducacion">
+    <div class="card-titles">
+      <h2>Educación</h2>
+      <div *ngIf="isUserLogged" class="btn-edit">
+        <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#educationForm"
+          (click)="onNewEducation()"><i class="fa fa-plus"></i></button>
+      </div>
     </div>
-  </div>
-  <div class="col-lg-10">
-    <ul class="items-list" id="eduList">
-      <li *ngFor="let educacion of educacionList; let i = index">
+    <div class="col-lg-10">
+      <ul class="items-list" id="eduList">
+        <li *ngFor="let educacion of educacionList; let i = index">
 
-        <div class="data-container">
-          <div class="row gx-2">
+          <div class="data-container">
+            <div class="row gx-2">
 
-            <div class="logo-image-container col-md-2"><img class="logo-image w-75" [src]="educacion.img">
-            </div>
-            <div class="list-info col-md-9">
-              <div>
-                <h3>{{ educacion.institucion }} </h3>
-                <p><span>{{ educacion.titulo }}</span>,
-                  <span>
-                    <div *ngIf="educacion.estudioFinalizado === true; then finalizado else noFinalizado"></div>
-                    <ng-template #finalizado>
-                      
-                    </ng-template>
-                    <ng-template #noFinalizado>
-                      Estudio no finalizado
-                    </ng-template>
-                  </span>.<br>
-                  <span>{{ educacion.descripcion }}</span>
-                </p>
-                <p><time>{{ educacion.fechaInicio }}</time>
-                  <time>
+              <div class="logo-image-container col-md-2"><img class="logo-image w-75 imagenLogo" [src]="educacion.img">
+              </div>
+              <div class="list-info col-md-9">
+                <div>
+                  <h3>{{ educacion.institucion }} </h3>
+                  <p><span>{{ educacion.titulo }}</span>,
                     <span>
-                        <div
-                            *ngIf="educacion.fechaFin; then hayFinalizacionEd else nohayFinalizacionEd">
+                      <div *ngIf="educacion.estudioFinalizado === true; then finalizado else noFinalizado"></div>
+                      <ng-template #finalizado>
+
+                      </ng-template>
+                      <ng-template #noFinalizado>
+                        Estudio no finalizado
+                      </ng-template>
+                    </span>.<br>
+                    <span>{{ educacion.descripcion }}</span>
+                  </p>
+                  <p><time>{{ educacion.fechaInicio }}</time>
+                    <time>
+                      <span>
+                        <div *ngIf="educacion.fechaFin; then hayFinalizacionEd else nohayFinalizacionEd">
                         </div>
                         <ng-template #hayFinalizacionEd>
-                            - {{ educacion.fechaFin }}
+                          - {{ educacion.fechaFin }}
                         </ng-template>
                         <ng-template #nohayFinalizacionEd>
 
                         </ng-template>
-                    </span>
-                </time>
-                
-                </p>
-              </div>
-            </div>
+                      </span>
+                    </time>
 
-            <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
-              <div class="btn-edit">
-                <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#educationForm"
-                  (click)="onEditEducation(i)"><i class="fa fa-pen"></i></button>
+                  </p>
+                </div>
               </div>
-              <div class="btn-edit">
-                <button class="btn btn-right" (click)="onDeleteEducation(i)"><i class="fa fa-trash"></i></button>
+
+              <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
+                <div class="btn-edit">
+                  <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#educationForm"
+                    (click)="onEditEducation(i)"><i class="fa fa-pen"></i></button>
+                </div>
+                <div class="btn-edit">
+                  <button class="btn btn-right" (click)="onDeleteEducation(i)"><i class="fa fa-trash"></i></button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
 
+    </div>
   </div>
 </div>

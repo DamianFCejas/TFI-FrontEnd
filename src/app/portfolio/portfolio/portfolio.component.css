@@ -1,4 +1,9 @@
 
+/* app-header {
+    position: sticky;
+    top: 0;
+} */
+
 app-banner {
     margin-bottom: -183px;
 }
@@ -34,7 +39,7 @@ app-banner {
     margin-bottom: -130px;
 }
 
-/* Para dispositivos 856px */
+
 @media screen and (max-width: 856px){
     app-banner {
         padding-top: 135px;
@@ -66,9 +71,15 @@ app-banner {
         padding-top: 210px;
         margin-bottom: -210px;
     }
+
+    #item-contacto {
+        padding-top: 210px;
+        margin-bottom: -210px;
+    }
 }
 
 @media screen and (max-width: 753px){
+
     app-banner {
         padding-top: 185px;
         margin-bottom: -275px;
@@ -77,11 +88,13 @@ app-banner {
     #item-acerca {
         padding-top: 275px;
         margin-bottom: -240px;
+        
     }
 
     #item-experiencia {
         padding-top: 240px;
         margin-bottom: -240px;
+        
     
     }
 
@@ -96,6 +109,11 @@ app-banner {
     }
     
     #item-proyectos {
+        padding-top: 240px;
+        margin-bottom: -240px;
+    }
+
+    #item-contacto {
         padding-top: 240px;
         margin-bottom: -240px;
     }
@@ -129,6 +147,11 @@ app-banner {
     }
     
     #item-proyectos {
+        padding-top: 325px;
+        margin-bottom: -325px;
+    }
+
+    #item-contacto {
         padding-top: 325px;
         margin-bottom: -325px;
     }

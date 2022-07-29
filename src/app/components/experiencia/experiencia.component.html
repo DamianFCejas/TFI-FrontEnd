@@ -1,8 +1,8 @@
 <div class="row ps-4">
     <!-- Modal -->
-    <div class="modal fade" id="experienciaForm" tabindex="-1" aria-labelledby="experienciaFormLabel"
-        aria-hidden="true" data-bs-backdrop="static">
-        <div class="modal-dialog">
+    <div class="modal fade" id="experienciaForm" tabindex="-1" aria-labelledby="experienciaFormLabel" aria-hidden="true"
+        data-bs-backdrop="static">
+        <div class="modal-dialog modal-fullscreen-md-down">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="experienciaFormLabel">Experiencia Laboral</h5>
@@ -95,71 +95,75 @@
         </div>
     </div>
 
-    <div class="card-titles">
-        <h2>Experiencia Laboral</h2>
-        <div *ngIf="isUserLogged" class="btn-edit">
-            <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#experienciaForm"
-                (click)="onNewExperiencia()"><i class="fa fa-plus"></i></button>
+    <div class="row contenidoExperiencia">
+        <div class="card-titles">
+            <h2>Experiencia Laboral</h2>
+            <div *ngIf="isUserLogged" class="btn-edit">
+                <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#experienciaForm"
+                    (click)="onNewExperiencia()"><i class="fa fa-plus"></i></button>
+            </div>
         </div>
-    </div>
-    <div class="col-lg-10">
-        <ul class="items-list" id="experienciaList">
-            <li *ngFor="let experiencia of experienciaList; let i = index">
+        <div class="col-lg-10">
+            <ul class="items-list" id="experienciaList">
+                <li *ngFor="let experiencia of experienciaList; let i = index">
 
-                <div class="data-container">
-                    <div class="row gx-2">
+                    <div class="data-container">
+                        <div class="row gx-2">
 
-                        <div class="list-info col-md-9">
-                            <div>
-                                <h3>{{ experiencia.tipoEmpleo }} </h3>
-                                <h4>( <time>{{ experiencia.fechaInicio }}</time>
-                                    <time>
+                            <div class="list-info col-md-9">
+                                <div>
+                                    <h3>{{ experiencia.tipoEmpleo }} </h3>
+                                    <h4>( <time>{{ experiencia.fechaInicio }}</time>
+                                        <time>
+                                            <span>
+                                                <div
+                                                    *ngIf="experiencia.fechaFin; then hayFinalizacion else nohayFinalizacion">
+                                                </div>
+                                                <ng-template #hayFinalizacion>
+                                                    - {{ experiencia.fechaFin }}
+                                                </ng-template>
+                                                <ng-template #nohayFinalizacion>
+
+                                                </ng-template>
+                                            </span>
+                                        </time> )
+                                    </h4>
+                                    <p><span>
+                                            <h4>{{ experiencia.empresa }}</h4>
+                                        </span>
                                         <span>
                                             <div
-                                                *ngIf="experiencia.fechaFin; then hayFinalizacion else nohayFinalizacion">
+                                                *ngIf="experiencia.esTrabajoActual === true; then finalizado else noFinalizado">
                                             </div>
-                                            <ng-template #hayFinalizacion>
-                                                - {{ experiencia.fechaFin }}
+                                            <ng-template #finalizado>
+                                                - Es trabajo actual
                                             </ng-template>
-                                            <ng-template #nohayFinalizacion>
-    
+                                            <ng-template #noFinalizado>
+
                                             </ng-template>
-                                        </span>
-                                    </time> )</h4>
-                                <p><span>
-                                        <h4>{{ experiencia.empresa }}</h4>
-                                    </span>
-                                    <span>
-                                        <div
-                                            *ngIf="experiencia.esTrabajoActual === true; then finalizado else noFinalizado">
-                                        </div>
-                                        <ng-template #finalizado>
-                                            - Es trabajo actual
-                                        </ng-template>
-                                        <ng-template #noFinalizado>
+                                        </span><br>
+                                        <span>{{ experiencia.descripcion }}</span>
+                                    </p>
 
-                                        </ng-template>
-                                    </span><br>
-                                    <span>{{ experiencia.descripcion }}</span>
-                                </p>
-
+                                </div>
                             </div>
-                        </div>
 
-                        <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
-                            <div class="btn-edit">
-                                <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#experienciaForm"
-                                    (click)="onEditExperiencia(i)"><i class="fa fa-pen"></i></button>
-                            </div>
-                            <div class="btn-edit">
-                                <button class="btn btn-right" (click)="onDeleteExperiencia(i)"><i
-                                        class="fa fa-trash"></i></button>
+                            <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
+                                <div class="btn-edit">
+                                    <button class="btn btn-right" data-bs-toggle="modal"
+                                        data-bs-target="#experienciaForm" (click)="onEditExperiencia(i)"><i
+                                            class="fa fa-pen"></i></button>
+                                </div>
+                                <div class="btn-edit">
+                                    <button class="btn btn-right" (click)="onDeleteExperiencia(i)"><i
+                                            class="fa fa-trash"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
 
+        </div>
     </div>
 </div>

@@ -1,12 +1,173 @@
-<div class="container-fluid ps-4">
-    <div class="card-titles">
-        <h2>Contacto</h2>
+<!-- <div class="card-titles col">
+    <h2>Contacto</h2>
+    </div> -->
+
+<!-- <div class="row">
+        <div class="row">
+            <div class="col">{{persona.nombre}} {{persona.apellido}}</div>
+            <div class="col">Contactame por mail: {{ persona.correo }}</div>
+            <div class="col">Establecido en {{ persona.domicilio }} </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"><img class="img-fluid" src="../../../assets/FotoContacto.png"></div>
+            
+        </div>
+
+    </div> -->
+
+<!-- <div class="card text-bg-dark">
+    <div class="float-end">
+        <img src="../../../assets/FotoContacto.png" class="card-img" id="imgContacto">
+    </div>
+    <div class="card-img-overlay">
+        <h2 class="card-title">Contacto</h2>
+        <p class="card-text">Contactame por mail: {{ persona.correo }}</p>
+        <p class="card-text">Establecido en {{ persona.domicilio }}</p>
+    </div>
+</div> -->
+
+<!-- <div class="row ps-4">
+    <div class="card border-0 mb-3">
+        <div class="row g-0">
+            <div class="col-md-5">
+                <div class="card-body">
+                    <h2 class="card-title mb-5">Contacto</h2>
+                    <p class="card-text mb-5"><img src="../../../assets/Mail.png" class="img-fluid" id="fotoMail"> {{ persona.correo }}</p>
+                    <p class="card-text">Establecido en {{ persona.domicilio }}</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="col-md-7 text-center pt-4 pe-5">
+                <img src="../../../assets/FotoContacto.png" class="img-fluid rounded" id="fotoContacto">
+            </div>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4 pb-4" id="tarjetas">
+        <div class="col mx-auto" id="cardLinkedin">
+            <div class="card border-0 mx-auto">
+                <img src="../../../assets/QRLinkedin.png" class="card-img-top mx-auto" id="imgLinkedin">
+                <div class="card-body">
+                    <h5 class="card-title">Linkedin</h5>
+                    <p class="card-text">¡Conectemos!</p>
+                    <p class="card-text">Aca va la interpolación del link</p>
+                </div>
+            </div>
+        </div>
+        <div class="col mx-auto" id="cardGithub">
+            <div class="card border-0 mx-auto">
+                <img src="../../../assets/GitHub.png" class="card-img-top mx-auto" id="imgGithub">
+                <div class="card-body">
+                    <h5 class="card-title">Github</h5>
+                    <p class="card-text">Aca va la interpolación del link</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+<!-- <div class="row ps-4">
+    <div class="card border-0 mb-3">
+        <div class="row">
+            <div class="col-md-7">
+
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h2 class="card-title mb-3">Contacto</h2>
+                            <p class="card-text mb-3"><img src="../../../assets/Mail.png" class="img-fluid"
+                                    id="fotoMail"> {{ persona.correo }}</p>
+                            <p class="card-text">Establecido en {{ persona.domicilio }}</p>
+                            <p class="card-text mb-4"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 g-4 pb-4" id="tarjetas">
+                    <div class="col mx-auto" id="cardLinkedin">
+                        <div class="card border-0 mx-auto">
+                            <img src="../../../assets/QRLinkedin.png" class="card-img-top mx-auto" id="imgLinkedin">
+                            <div class="card-body">
+                                <h5 class="card-title">Linkedin</h5>
+                                <p class="card-text">¡Conectemos!</p>
+                                <p class="card-text">Aca va la interpolación del link</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mx-auto" id="cardGithub">
+                        <div class="card border-0 mx-auto">
+                            <img src="../../../assets/GitHub.png" class="card-img-top mx-auto" id="imgGithub">
+                            <div class="card-body">
+                                <h5 class="card-title">Github</h5>
+                                <p class="card-text">Aca va la interpolación del link</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-5 text-center pt-4 pe-5">
+                <img src="../../../assets/FotoContacto3.png" class="img-fluid rounded-end" id="fotoContacto">
+            </div>
+        </div>
+        
+    </div>
+
+    
+</div> -->
+
+<div class="row ps-4" id="fondo">
+    <div class="card border-0 mb-3" id="fondo">
+        <img [src]="persona.urlFotoContacto" class="card-img img-fluid rounded-end" id="fotoContacto">
+        <div class="card-img-overlay row">
+            <div class="col-md-7">
+
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h2 class="card-title mb-3">Contacto</h2>
+                            <p class="card-text mb-3"><img src="../../../assets/Mail.png" class="img-fluid"
+                                    id="fotoMail"> {{ persona.correo }}</p>
+                            <p class="card-text mb-4">Establecido en {{ persona.domicilio }}</p>
+                            
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="row row-cols-1 row-cols-md-2 g-4 pb-4" id="tarjetas">
+                    <div class="col mx-auto" id="cardLinkedin">
+                        <div class="card border-0 mx-auto">
+                            <img [src]="persona.urlQrLd" class="card-img-top mx-auto" id="imgLinkedin">
+                            <div class="card-body">
+                                <h5 class="card-title">Linkedin</h5>
+                                <p class="card-text">¡Conectemos!</p>
+                                <a class="card-text" [href]="persona.urlLd" target="_blank">{{persona.urlLd}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mx-auto" id="cardGithub">
+                        <div class="card border-0 mx-auto">
+                            <img src="../../../assets/GitHub.png" class="card-img-top mx-auto" id="imgGithub">
+                            <div class="card-body">
+                                <h5 class="card-title">Github</h5>
+                                <a class="card-text" [href]="persona.urlGithub" target="_blank">{{persona.urlGithub}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            
+        </div>
 
     </div>
 
-    <div>
-        <div>{{ persona.correo }} </div>
-        <div>{{ persona.domicilio }} </div>
 
-    </div>
 </div>

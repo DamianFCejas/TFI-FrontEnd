@@ -7,6 +7,10 @@ div {
     
 }
 
+.contenidoAcercaDe {
+    z-index: 1000;
+}
+
 /*Estilo de la foto de perfil*/
 
 @media (min-width: 646px){

@@ -2,3 +2,7 @@
     background-color: var(--colordefondo);
     padding: 20px;
 }
+
+.contenidoHyss {
+    z-index: 700;
+}

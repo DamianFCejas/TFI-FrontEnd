@@ -1,3 +1,5 @@
+import { PersonaService } from 'src/app/service/persona.service';
+import { Persona } from './../../model/persona.model';
 import { LoginService } from './../../service/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -8,10 +10,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit { 
   //username: string = "";
   //password: string = "";
   
+  persona: Persona = new Persona ("","","","","","","","","","","","","","","","","");
+
   form: FormGroup;
   loginerror: Boolean = false;
 
@@ -20,6 +24,7 @@ export class LoginComponent implements OnInit {
     private LoginService:LoginService, 
     //private route: ActivatedRoute,
     private FormBuilder: FormBuilder,
+    private personaService: PersonaService,
 
     ) {
       this.form = this.FormBuilder.group(
@@ -64,6 +69,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.reloadData();
+  }
+  private reloadData() {
+    this.personaService.getPersona().subscribe(
+      data => {
+        this.persona = data;
+      });
+
   }
 
   get Username() {

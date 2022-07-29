@@ -1,7 +1,8 @@
 <div class="row ps-4">
     <!-- Modal -->
-    <div class="modal fade" id="proyectoForm" tabindex="-1" aria-labelledby="proyectoFormLabel" aria-hidden="true" data-bs-backdrop="static">
-        <div class="modal-dialog">
+    <div class="modal fade" id="proyectoForm" tabindex="-1" aria-labelledby="proyectoFormLabel" aria-hidden="true"
+        data-bs-backdrop="static">
+        <div class="modal-dialog modal-fullscreen-md-down">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="proyectoFormLabel">Proyectos</h5>
@@ -68,46 +69,48 @@
         </div>
     </div>
 
-    <div class="card-titles">
-        <h2>Proyectos</h2>
-        <div *ngIf="isUserLogged" class="btn-edit">
-            <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#proyectoForm"
-                (click)="onNewProyecto()"><i class="fa fa-plus"></i></button>
+    <div class="row contenidoProyectos">
+        <div class="card-titles">
+            <h2>Proyectos</h2>
+            <div *ngIf="isUserLogged" class="btn-edit">
+                <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#proyectoForm"
+                    (click)="onNewProyecto()"><i class="fa fa-plus"></i></button>
+            </div>
         </div>
-    </div>
-    <div class="col-lg-10">
-        <ul class="list-unstyled" id="proyectoList">
-            <li *ngFor="let proyecto of proyectoList; let i = index">
+        <div class="col-lg-10">
+            <ul class="list-unstyled" id="proyectoList">
+                <li *ngFor="let proyecto of proyectoList; let i = index">
 
-                <div class="data-container">
-                    <div class="row gx-2">
+                    <div class="data-container">
+                        <div class="row gx-2">
 
-                        <div class="logo-image-container col-md-2"><img class="logo-image w-75"
-                                [src]="proyecto.urlFoto">
-                        </div>
-                        <div class="list-info col-md-9">
-                            <div>
-                                <h3>{{ proyecto.nombre }} </h3>
-                                <p>
-                                    <span>{{ proyecto.descripcion }}</span>
-                                </p>
+                            <div class="logo-image-container col-md-2"><img class="logo-image w-75"
+                                    [src]="proyecto.urlFoto">
                             </div>
-                        </div>
-
-                        <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
-                            <div class="btn-edit">
-                                <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#proyectoForm"
-                                    (click)="onEditProyecto(i)"><i class="fa fa-pen"></i></button>
+                            <div class="list-info col-md-9">
+                                <div>
+                                    <h3>{{ proyecto.nombre }} </h3>
+                                    <p>
+                                        <span>{{ proyecto.descripcion }}</span>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="btn-edit">
-                                <button class="btn btn-right" (click)="onDeleteProyecto(i)"><i
-                                        class="fa fa-trash"></i></button>
+
+                            <div *ngIf="isUserLogged" class="data-control col-md-1 text-end">
+                                <div class="btn-edit">
+                                    <button class="btn btn-right" data-bs-toggle="modal" data-bs-target="#proyectoForm"
+                                        (click)="onEditProyecto(i)"><i class="fa fa-pen"></i></button>
+                                </div>
+                                <div class="btn-edit">
+                                    <button class="btn btn-right" (click)="onDeleteProyecto(i)"><i
+                                            class="fa fa-trash"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
 
+        </div>
     </div>
 </div>

@@ -5,3 +5,7 @@ div {
 h3, h4 {
     display: inline;
 }
+
+.contenidoExperiencia {
+    z-index: 900;
+}
