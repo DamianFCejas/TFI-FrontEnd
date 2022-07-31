@@ -30,9 +30,7 @@
                         <div class="row mb-3">
                             <label for="descripcion" class="col-sm-3 col-form-label">Descripción</label>
                             <div class="col-sm-9">
-                                <input type="text" name="descripcion" formControlName="descripcion" class="form-control"
-                                    [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched, 'is-valid': !Descripcion?.errors && Descripcion?.touched }"
-                                    required>
+                                <textarea name="descripcion" formControlName="descripcion" class="form-control" [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched, 'is-valid': !Descripcion?.errors && Descripcion?.touched }" required></textarea>
                                 <div *ngIf="Descripcion?.errors && Descripcion?.touched">
                                     <span *ngIf="Descripcion?.hasError('required')" class="text-danger">La descripción
                                         es requerida</span>
@@ -91,7 +89,7 @@
                                 <div>
                                     <h3>{{ proyecto.nombre }} </h3>
                                     <p>
-                                        <span>{{ proyecto.descripcion }}</span>
+                                        <span class="claseDescripcion">{{ proyecto.descripcion }}</span>
                                     </p>
                                 </div>
                             </div>

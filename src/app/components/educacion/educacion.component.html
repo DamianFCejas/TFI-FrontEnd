@@ -74,8 +74,8 @@
 
             <div class="row mb-3">
               <label for="descripcion" class="col-sm-3 col-form-label">Descripción</label>
-              <div class="col-sm-9">
-                <input type="text" name="descripcion" formControlName="descripcion" class="form-control" required>
+              <div class="col-sm-9">                
+                <textarea name="descripcion" formControlName="descripcion" class="form-control" required></textarea>
               </div>
             </div>
 
@@ -118,20 +118,18 @@
           <div class="data-container">
             <div class="row gx-2">
 
-              <div class="logo-image-container col-md-2"><img class="logo-image w-75 imagenLogo" [src]="educacion.img">
+              <div class="logo-image-container col-md-2"><img class="logo-image w-75 imagenLogo p-3" [src]="educacion.img">
               </div>
               <div class="list-info col-md-9">
                 <div>
                   <h3>{{ educacion.institucion }} </h3>
-                  <p><span>{{ educacion.titulo }}</span>,
-                    <span>
+                  <p><span>{{ educacion.titulo}}</span>
+                    <span class="fst-italic fw-bold">
                       <div *ngIf="educacion.estudioFinalizado === true; then finalizado else noFinalizado"></div>
                       <ng-template #finalizado>
 
                       </ng-template>
-                      <ng-template #noFinalizado>
-                        Estudio no finalizado
-                      </ng-template>
+                      <ng-template #noFinalizado>, Estudio no finalizado</ng-template>
                     </span>.<br>
                     <span>{{ educacion.descripcion }}</span>
                   </p>

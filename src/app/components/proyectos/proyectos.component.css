@@ -20,3 +20,7 @@
 .contenidoProyectos {
     z-index: 600;
 }
+
+.claseDescripcion {
+    white-space: break-spaces;
+}

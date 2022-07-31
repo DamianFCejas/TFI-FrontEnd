@@ -92,9 +92,7 @@
                             <div class="row mb-3">
                                 <label for="sobreMi" class="col-sm-3 col-form-label">Sobre Mi</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="sobreMi" formControlName="sobreMi" class="form-control"
-                                        [ngClass]="{'is-invalid': SobreMi?.errors && SobreMi?.touched, 'is-valid': !SobreMi?.errors && SobreMi?.touched }"
-                                        required>
+                                    <textarea name="sobreMi" formControlName="sobreMi" class="form-control" [ngClass]="{'is-invalid': SobreMi?.errors && SobreMi?.touched, 'is-valid': !SobreMi?.errors && SobreMi?.touched }" required></textarea>
                                     <div *ngIf="SobreMi?.errors && SobreMi?.touched">
                                         <span *ngIf="SobreMi?.hasError('required')" class="text-danger">La información
                                             es requerida</span>
