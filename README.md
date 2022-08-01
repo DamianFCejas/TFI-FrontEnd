@@ -4,6 +4,16 @@
 
 Éste trabajo es el proyecto final de la segunda parte del programa [Argentina Programa](https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa) llamada [YoProgramo](https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa). El objetivo de éste trabajo es demostrar los conocimientos adquiridos durante el curso y realizar al mismo tiempo un portfolio de presentación para utilizar en búsquedas laborales. El código del portfolio está dividido en 2 repositorios asignados uno al [frontend](https://github.com/DamianFCejas/TFI-FrontEnd) y el otro al [backend](https://github.com/DamianFCejas/TFI-BackEnd) del mismo.
 
+Éste proyecto cumple con los requisitos:
+
+- [x] Desarrollar una aplicación web full stack
+- [x] Mostrar tus datos personales, estudios cursados, experiencia laboral, conocimiento de las tecnologías y lo que desees agregar
+- [x] Aplicación de arquitectura distribuida
+- [x] Contener un diseño de interfaz de usuario (front end) que muestre la información
+- [x] Contener una base de datos que almacene los datos antes mencionados
+- [x] Contar con las APIs necesarias para proveer a través de internet la información (back end)
+- [x] Publicar el portfolio web y usarlo como carta de presentación en el mercado laboral
+
 ## Visuales
 
 Acá se puede ver una captura del frontend:
@@ -31,7 +41,13 @@ Por el momento no voy a realizar modificaciones hasta que el trabajo sea evaluad
 
 ## Agradecimientos
 
-Debo agradecer enormemente a mi familia por apoyarme en éste nuevo camino que estoy iniciando en programación. Sin el soporte de mi querida compañera y la ayuda de mis hijos no habría podido hacerme el tiempo para avanzar en las líneas de código necesarias para que éste proyecto esté levantado.
+Agradezco en primer lugar a mi compañera que un día llegó y me dijo: 
+
+> _Viste que hay un programa de programación llamado Argentina Programa?_ 
+
+Agradezco enormemente a mi familia por apoyarme en éste nuevo camino que estoy iniciando en programación. Sin el soporte de mi querida compañera y la ayuda de mis hijos no habría podido hacerme el tiempo para avanzar en las líneas de código necesarias para que éste proyecto esté levantado.
+
+Agradezco a mis profesores de Argentina Programa, y agradezco que desde el Estado se haya iniciado esta política pública tan acertada!
 
 ## Licencia
 
