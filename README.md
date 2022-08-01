@@ -1,6 +1,6 @@
 # Trabajo Final Integrador de YoProgramo de Argentina Programa (FrontEnd)
 
-## Descripcion
+## Descripción
 
 Éste trabajo es el proyecto final de la segunda parte del programa [Argentina Programa](https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa) llamada [#YoProgramo](https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa). El objetivo de éste trabajo es demostrar los conocimientos adquiridos durante el curso y realizar al mismo tiempo un portfolio de presentación para utilizar en búsquedas laborales. El código del portfolio está dividido en 2 repositorios asignados uno al [frontend](https://github.com/DamianFCejas/TFI-FrontEnd) y el otro al [backend](https://github.com/DamianFCejas/TFI-BackEnd) del mismo.
 
@@ -17,7 +17,7 @@
 
 y además también:
 
-- [x] es responsivo
+- [x] es responsivo :muscle:
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 Agradezco en primer lugar a mi compañera que un día llegó y me dijo: 
 
-> _¿Viste que hay un programa de programación llamado Argentina Programa?_ 
+> _¿Viste que hay un programa de programación llamado Argentina Programa?_ :sparkles:
 
 y con éso logré tener las excusas necesarias para meterme en éste mundo, al cual siempre había querido entrar pero nunca le había dado oportunidad.
 
