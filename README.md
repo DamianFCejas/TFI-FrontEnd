@@ -1,8 +1,14 @@
 # Trabajo Final Integrador de YoProgramo de Argentina Programa (FrontEnd)
 
-##Descripcion
+## Descripcion
 
-Éste trabajo es el proyecto final de la segunda parte del programa [Argentina Programa](https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa) llamada YoProgramo. El objetivo de éste trabajo es demostrar los conocimientos adquiridos durante el curso y realizar al mismo tiempo un portfolio de presentación para utilizar en búsquedas laborales. El código del portfolio está dividido en 2 repositorios asignados uno al [frontend](https://github.com/DamianFCejas/TFI-FrontEnd) y el otro al [backend](https://github.com/DamianFCejas/TFI-BackEnd) del mismo.
+Éste trabajo es el proyecto final de la segunda parte del programa [Argentina Programa](https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa) llamada [YoProgramo](https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa). El objetivo de éste trabajo es demostrar los conocimientos adquiridos durante el curso y realizar al mismo tiempo un portfolio de presentación para utilizar en búsquedas laborales. El código del portfolio está dividido en 2 repositorios asignados uno al [frontend](https://github.com/DamianFCejas/TFI-FrontEnd) y el otro al [backend](https://github.com/DamianFCejas/TFI-BackEnd) del mismo.
+
+## Visuales
+
+Acá se puede ver una captura del frontend:
+![](https://i.ibb.co/k626sJS/Proyecto-Portfolio.png)
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
