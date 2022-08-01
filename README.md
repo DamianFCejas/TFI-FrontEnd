@@ -35,7 +35,7 @@ Debo agradecer enormemente a mi familia por apoyarme en éste nuevo camino que e
 
 ## Licencia
 
-GNU GPLv3 licence
+GNU GPLv3 licence. Ver [licence](https://github.com/DamianFCejas/TFI-FrontEnd/blob/main/licence)
 
 ## Estado del proyecto 
 
