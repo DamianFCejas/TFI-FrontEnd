@@ -12,6 +12,7 @@
 - [x] Contener un diseño de interfaz de usuario (front end) que muestre la información
 - [x] Contener una base de datos que almacene los datos antes mencionados
 - [x] Contar con las APIs necesarias para proveer a través de internet la información (back end)
+- [x] (GITHUB) Crear los repositorios para las capas Front-End y Back-End, e ir subiendo el avance de las capas del proyecto al repositorio que corresponda
 - [x] Publicar el portfolio web y usarlo como carta de presentación en el mercado laboral
 
 ## Visuales
