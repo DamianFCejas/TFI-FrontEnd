@@ -15,11 +15,19 @@
 - [x] (GITHUB) Crear los repositorios para las capas Front-End y Back-End, e ir subiendo el avance de las capas del proyecto al repositorio que corresponda
 - [x] Publicar el portfolio web y usarlo como carta de presentación en el mercado laboral
 
+y además también:
+
+- [x] es responsivo
+
+___
+
 ## Visuales
 
 Acá se puede ver una captura del frontend:
 
 ![](https://i.ibb.co/k626sJS/Proyecto-Portfolio.png)
+
+___
 
 ## Instalación
 
@@ -33,6 +41,8 @@ Ejecuta `ng serve` para levantar un servidor local. Navegar a `http://localhost:
 
 Para más información sobre Angular CLI utilice `ng help` o puede navegar a [Referencias de Angular CLI](https://angular.io/cli).
 
+___
+
 ## Soporte
 
 Las sugerencias, mejoras, quejas, etc. se pueden enviar a _damianfcejas@hotmail.com_. Asimismo son bienvenidos los pull request. 
@@ -40,6 +50,8 @@ Las sugerencias, mejoras, quejas, etc. se pueden enviar a _damianfcejas@hotmail.
 ## Hoja de ruta
 
 Por el momento no voy a realizar modificaciones hasta que el trabajo sea evaluado. Luego tengo pensado mejorar el diseño, incorporando videos, imágenes, colores... puede ser que se vea completamente distinta incluso, dependerá de que logre aprender y dominar el código para lograr lo que tengo en mente.
+
+___
 
 ## Agradecimientos
 
@@ -52,6 +64,8 @@ y con éso logré tener las excusas necesarias para meterme en éste mundo, al c
 Agradezco enormemente a mi familia por apoyarme en éste nuevo camino que estoy iniciando en programación. Sin el soporte de mi querida compañera y la ayuda de mis hijos no habría podido hacerme el tiempo para avanzar en las líneas de código necesarias para que éste proyecto esté levantado.
 
 Agradezco a mis profesores de Argentina Programa, y agradezco que desde el Estado se haya iniciado esta política pública tan acertada!
+
+___
 
 ## Licencia
 
