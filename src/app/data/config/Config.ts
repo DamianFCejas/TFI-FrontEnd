@@ -1,3 +1,3 @@
 export const config = {
-    baseUrl: "https://portfoliodfc.herokuapp.com/"
+    baseUrl: "https://portfolio-dfc.onrender.com/"
 }
